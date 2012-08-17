@@ -2,7 +2,7 @@
 [Bb]in/
 [Bb]ld/
 *.user
-/TestResults
+TestResults
 *.vspscc
 *.vssscc
 deploy
