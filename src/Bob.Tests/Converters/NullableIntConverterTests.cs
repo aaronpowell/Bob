@@ -17,7 +17,7 @@ namespace Bob.Tests.Converters
         }
 
         [TestMethod]
-        public void IntStringReturnsParsedFloat()
+        public void IntStringReturnsParsedInt()
         {
             var converter = new NullableIntConverter();
 

@@ -104,6 +104,7 @@
   <ItemGroup>
     <Compile Include="Controls\NumericTextBox.cs" />
     <Compile Include="Converters\NullableConverterBase.cs" />
+    <Compile Include="Converters\NullableDateTimeConverter.cs" />
     <Compile Include="Converters\NullableFloatConverter.cs" />
     <Compile Include="Converters\NullableIntConverter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
