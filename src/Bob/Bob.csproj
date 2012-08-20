@@ -104,6 +104,10 @@
   <ItemGroup>
     <Compile Include="Binders\AttachableCollection.cs" />
     <Compile Include="Binders\DependencyObjectCollection.cs" />
+    <Compile Include="Binders\EventBinder.cs" />
+    <Compile Include="Binders\EventBinding.cs" />
+    <Compile Include="Binders\EventToCommand.cs" />
+    <Compile Include="Binders\EventToDataContextMethod.cs" />
     <Compile Include="Binders\IAttachedObject.cs" />
     <Compile Include="Binders\VisualStateBinder.cs" />
     <Compile Include="Binders\VisualStateBinding.cs" />
@@ -115,6 +119,7 @@
     <Compile Include="Converters\NullableFloatConverter.cs" />
     <Compile Include="Converters\NullableIntConverter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilities\TaskExceptionExt.cs" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '11.0' ">
     <VisualStudioVersion>11.0</VisualStudioVersion>
