@@ -102,6 +102,13 @@
     <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Binders\AttachableCollection.cs" />
+    <Compile Include="Binders\DependencyObjectCollection.cs" />
+    <Compile Include="Binders\IAttachedObject.cs" />
+    <Compile Include="Binders\VisualStateBinder.cs" />
+    <Compile Include="Binders\VisualStateBinding.cs" />
+    <Compile Include="Binders\VisualStateBindingCollection.cs" />
+    <Compile Include="Binders\VisualStateSwitchCase.cs" />
     <Compile Include="Controls\NumericTextBox.cs" />
     <Compile Include="Converters\NullableConverterBase.cs" />
     <Compile Include="Converters\NullableDateTimeConverter.cs" />
