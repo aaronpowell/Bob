@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Bob</id>
+    <version>0.1.0</version>
+    <title>Bob</title>
+    <authors>Aaron Powell, Daniel Chambers</authors>
+    <owners>Aaron Powell, Daniel Chambers</owners>
+    <licenseUrl>https://github.com/aaronpowell/Bob/blob/master/LICENSE.md</licenseUrl>
+    <projectUrl>https://github.com/aaronpowell/Bob/</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Bob wasn't a great product for Microsoft but maybe Bob can add what's missing for Windows 8</description>
+    <releaseNotes>Initial release of Bob.</releaseNotes>
+    <copyright>Copyright 2012</copyright>
+    <tags>Windows8 XAML</tags>
+  </metadata>
+</package>
