@@ -5,9 +5,9 @@ using Windows.UI.Xaml.Media;
 
 namespace Bob.Binders
 {
-    public class VisualStateBinding : AttachableCollection<VisualStateSwitchCase>
+    public class VisualStateBinding : AttachableCollection<VisualStateSwitch>
     {
-        private BindingObserver _valueSourceBindingObserver;
+        private BindingObserver valueSourceBindingObserver;
 
         public static readonly DependencyProperty DataContextProperty =
             DependencyProperty.Register(
@@ -32,13 +32,15 @@ namespace Bob.Binders
 
         private void CreateValueSourceBindingObserver()
         {
-            if (_valueSourceBindingObserver != null)
-                _valueSourceBindingObserver.ValueChanged -= OnValueSourceValueChanged;
+            if (valueSourceBindingObserver != null)
+                valueSourceBindingObserver.ValueChanged -= OnValueSourceValueChanged;
 
-            _valueSourceBindingObserver = new BindingObserver();
-            _valueSourceBindingObserver.DataContext = DataContext;
-            _valueSourceBindingObserver.ValueChanged += OnValueSourceValueChanged;
-            _valueSourceBindingObserver.SetBinding(BindingObserver.ValueProperty, ValueSource);
+            valueSourceBindingObserver = new BindingObserver
+                                             {
+                                                 DataContext = DataContext
+                                             };
+            valueSourceBindingObserver.ValueChanged += OnValueSourceValueChanged;
+            valueSourceBindingObserver.SetBinding(BindingObserver.ValueProperty, ValueSource);
         }
 
         private void OnValueSourceValueChanged(object sender, EventArgs e)
@@ -49,7 +51,7 @@ namespace Bob.Binders
                 return;
             }
 
-            var value = _valueSourceBindingObserver.Value;
+            var value = valueSourceBindingObserver.Value;
             foreach (var @case in this)
             {
                 @case.EvaluateValue(value);
@@ -58,7 +60,7 @@ namespace Bob.Binders
 
         private void OnElementLoaded(object sender, RoutedEventArgs e)
         {
-            OnValueSourceValueChanged(_valueSourceBindingObserver, EventArgs.Empty);
+            OnValueSourceValueChanged(valueSourceBindingObserver, EventArgs.Empty);
             ((FrameworkElement)sender).Loaded -= OnElementLoaded;
         }
 
@@ -77,14 +79,14 @@ namespace Bob.Binders
 
         private void OnValueSourceChanged(DependencyPropertyChangedEventArgs e)
         {
-            if (_valueSourceBindingObserver == null)
+            if (valueSourceBindingObserver == null)
                 return; //Let the OnDataContextChanged method create it initially
 
             if (e.NewValue != e.OldValue)
                 CreateValueSourceBindingObserver();
         }
 
-        internal override void ItemAdded(VisualStateSwitchCase item)
+        internal override void ItemAdded(VisualStateSwitch item)
         {
             if (AssociatedObject != null)
             {
@@ -92,7 +94,7 @@ namespace Bob.Binders
             }
         }
 
-        internal override void ItemRemoved(VisualStateSwitchCase item)
+        internal override void ItemRemoved(VisualStateSwitch item)
         {
             if (AssociatedObject != null)
             {
@@ -102,16 +104,16 @@ namespace Bob.Binders
 
         protected override void OnAttached()
         {
-            foreach (VisualStateSwitchCase binding in this)
+            foreach (VisualStateSwitch binding in this)
                 binding.Attach(AssociatedObject);
         }
 
         protected override void OnDetaching()
         {
-            foreach (VisualStateSwitchCase binding in this)
+            foreach (VisualStateSwitch binding in this)
                 binding.Detach();
 
-            _valueSourceBindingObserver = null;
+            valueSourceBindingObserver = null;
         }
 
         private sealed class BindingObserver : FrameworkElement

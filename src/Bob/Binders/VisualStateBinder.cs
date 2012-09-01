@@ -35,22 +35,21 @@ namespace Bob.Binders
             var oldValue = e.OldValue as VisualStateBindingCollection;
             var newValue = e.NewValue as VisualStateBindingCollection;
 
-            if (oldValue != newValue)
+            if (oldValue == newValue) return;
+
+            if (oldValue != null && oldValue.AssociatedObject != null)
             {
-                if (oldValue != null && oldValue.AssociatedObject != null)
+                oldValue.Detach();
+            }
+
+            if (newValue != null && d != null)
+            {
+                if (newValue.AssociatedObject != null)
                 {
-                    oldValue.Detach();
+                    throw new InvalidOperationException("Too many");
                 }
 
-                if (newValue != null && d != null)
-                {
-                    if (newValue.AssociatedObject != null)
-                    {
-                        throw new InvalidOperationException("Too many");
-                    }
-
-                    newValue.Attach(d);
-                }
+                newValue.Attach(d);
             }
         }
     }

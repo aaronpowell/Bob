@@ -110,9 +110,12 @@
     <Compile Include="Binders\EventToCommand.cs" />
     <Compile Include="Binders\EventToDataContextMethod.cs" />
     <Compile Include="Binders\IAttachedObject.cs" />
+    <Compile Include="Binders\NotNullVisualStateSwitch.cs" />
+    <Compile Include="Binders\NullVisualStateSwitch.cs" />
     <Compile Include="Binders\VisualStateBinder.cs" />
     <Compile Include="Binders\VisualStateBinding.cs" />
     <Compile Include="Binders\VisualStateBindingCollection.cs" />
+    <Compile Include="Binders\VisualStateSwitch.cs" />
     <Compile Include="Binders\VisualStateSwitchCase.cs" />
     <Compile Include="Controls\NumericTextBox.cs" />
     <Compile Include="Converters\NullableConverterBase.cs" />
