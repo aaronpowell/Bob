@@ -124,9 +124,10 @@
     <Compile Include="Converters\NullableIntConverter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\INotificationService.cs" />
-    <Compile Include="Services\IShareSource.cs" />
+    <Compile Include="Storage\ISettingsStore.cs" />
+    <Compile Include="Storage\LocalSettingsStore.cs" />
     <Compile Include="Services\MessageDialogNotificationService.cs" />
-    <Compile Include="Services\ShareSource.cs" />
+    <Compile Include="Storage\RoamingSettingStore.cs" />
     <Compile Include="Utilities\KeyValidation.cs" />
     <Compile Include="Utilities\TaskExceptionExt.cs" />
   </ItemGroup>
