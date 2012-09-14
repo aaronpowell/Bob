@@ -117,6 +117,7 @@
     <Compile Include="Binders\VisualStateBindingCollection.cs" />
     <Compile Include="Binders\VisualStateSwitch.cs" />
     <Compile Include="Binders\VisualStateSwitchCase.cs" />
+    <Compile Include="Controls\DayMonthYearSelector.cs" />
     <Compile Include="Controls\NumericTextBox.cs" />
     <Compile Include="Converters\NullableConverterBase.cs" />
     <Compile Include="Converters\NullableDateTimeConverter.cs" />
@@ -130,6 +131,13 @@
     <Compile Include="Storage\RoamingSettingStore.cs" />
     <Compile Include="Utilities\KeyValidation.cs" />
     <Compile Include="Utilities\TaskExceptionExt.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Themes\Generic.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Page>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '11.0' ">
     <VisualStudioVersion>11.0</VisualStudioVersion>

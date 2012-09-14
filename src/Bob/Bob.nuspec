@@ -14,4 +14,9 @@
     <copyright>Copyright 2012</copyright>
     <tags>Windows8 XAML</tags>
   </metadata>
+  <files>
+    <file src="bin\Release\Bob.dll" target="lib\winrt45\Bob.dll" />
+    <file src="bin\Release\Bob.pri" target="lib\winrt45\Bob.pri" />
+    <file src="bin\Release\Themes\Generic.xaml" target="lib\winrt45\Bob\Themes\Generic.xaml" />
+  </files>
 </package>

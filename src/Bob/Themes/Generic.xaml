@@ -1,0 +1,26 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="using:Bob.Controls">
+
+    <Style TargetType="controls:DayMonthYearSelector">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="controls:DayMonthYearSelector">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="28*" />
+                            <ColumnDefinition Width="44*" />
+                            <ColumnDefinition Width="28*" />
+                        </Grid.ColumnDefinitions>
+
+                        <ComboBox x:Name="DayComboBox" Grid.Column="0" Margin="0,0,5,0" />
+                        <ComboBox x:Name="MonthComboBox" Grid.Column="1" Margin="5,0,5,0" />
+                        <ComboBox x:Name="YearComboBox" Grid.Column="2" Margin="5,0,0,0" />
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>
