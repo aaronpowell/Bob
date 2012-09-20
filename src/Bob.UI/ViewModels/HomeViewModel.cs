@@ -23,5 +23,10 @@ namespace Bob.UI.ViewModels
         {
             _navigationManager.NavigateTo(typeof(DayMonthYearSelectorDemoViewModel));
         }
+
+        public void NavigateToConstrainedImageDemo()
+        {
+            _navigationManager.NavigateTo(typeof(ConstrainedImageDemoViewModel));
+        }
     }
 }

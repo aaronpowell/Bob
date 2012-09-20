@@ -8,6 +8,7 @@ Features:
 * Controls
 	* `NumericTextBox` for when you want to allow only numbers (ints or floats). It'll also show the appropriate soft keyboard
 	* `DayMonthYearSelector` for when you want the user to enter a date. It allows you specify a minimum and maximum date, and automatically handles months of differing length, leap years and null dates. The control has dropdowns for day, month and year, and exposes a single nullable DateTime property to bind to (SelectedDate).
+    * `ConstrainedImage` for when you want to display an image at its actual size, unless it is too big for the area in which it has been placed, in which case you'd rather it be shrunk to fit the space available.
 * Converters
 	* `NullableDateTimeConverter`, `NullableFloatConverter`, `NullableIntConverter` because you can't natively bind types of [`Nullable<T>`](http://msdn.microsoft.com/en-us/library/b3h38hb0.aspx). There's also a `NullableConverterBase` so you can make your own
 * Binders

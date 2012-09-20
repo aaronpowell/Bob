@@ -117,6 +117,7 @@
     <Compile Include="Binders\VisualStateBindingCollection.cs" />
     <Compile Include="Binders\VisualStateSwitch.cs" />
     <Compile Include="Binders\VisualStateSwitchCase.cs" />
+    <Compile Include="Controls\ConstrainedImage.cs" />
     <Compile Include="Controls\DayMonthYearSelector.cs" />
     <Compile Include="Controls\NumericTextBox.cs" />
     <Compile Include="Converters\NullableConverterBase.cs" />

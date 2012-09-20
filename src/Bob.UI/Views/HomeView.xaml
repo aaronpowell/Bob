@@ -14,5 +14,10 @@
                 <binders:EventToDataContextMethod EventName="Click" MethodName="NavigateToDayMonthYearSelectorDemo" />
             </binders:EventBinder.Bindings>
         </Button>
+        <Button Content="ConstrainedImage demo">
+            <binders:EventBinder.Bindings>
+                <binders:EventToDataContextMethod EventName="Click" MethodName="NavigateToConstrainedImageDemo" />
+            </binders:EventBinder.Bindings>
+        </Button>
     </StackPanel>
 </Page>

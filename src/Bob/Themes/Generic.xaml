@@ -23,4 +23,14 @@
         </Setter>
     </Style>
 
+    <Style TargetType="controls:ConstrainedImage">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="controls:ConstrainedImage">
+                    <Image x:Name="Image" Source="{TemplateBinding Source}" Stretch="Uniform" />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
 </ResourceDictionary>
