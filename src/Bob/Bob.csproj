@@ -131,7 +131,6 @@
     <Compile Include="Services\MessageDialogNotificationService.cs" />
     <Compile Include="Storage\RoamingSettingStore.cs" />
     <Compile Include="Utilities\KeyValidation.cs" />
-    <Compile Include="Utilities\TaskExceptionExt.cs" />
   </ItemGroup>
   <ItemGroup>
     <Page Include="Themes\Generic.xaml">

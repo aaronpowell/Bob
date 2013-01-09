@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Reflection;
+using System.Threading.Tasks;
 using Bob.Utilities;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Media;
@@ -17,7 +18,7 @@ namespace Bob.Binders
 
         public bool Bubble { get; set; }
 
-        protected override void OnEventRaised(object sender, object e)
+        protected override async void OnEventRaised(object sender, object e)
         {
             var frameworkElement = ((FrameworkElement)sender);
             var dataContext = frameworkElement.DataContext;
@@ -35,20 +36,26 @@ namespace Bob.Binders
 
             if (foundMethod == false) 
                 return;
-            
+
+            Task potentialReturnTask;
             int paramCount = methodInfo.GetParameters().Count();
             if (paramCount == 2)
             {
-                methodInfo.InvokeOrThrows(dataContext, new[] { e, extraPropertyValue });
+                potentialReturnTask = methodInfo.Invoke(dataContext, new[] { e, extraPropertyValue }) as Task;
             }
             else if (paramCount == 1)
             {
-                methodInfo.InvokeOrThrows(dataContext, new[] { e });
+                potentialReturnTask = methodInfo.Invoke(dataContext, new[] { e }) as Task;
             }
             else
             {
-                methodInfo.InvokeOrThrows(dataContext, new object[0]);
+                potentialReturnTask = methodInfo.Invoke(dataContext, new object[0]) as Task;
             }
+
+            //Await any Task that is returned from the method, in order to propagate its error
+            //onto the UI thread if it fails
+            if (potentialReturnTask != null)
+                await potentialReturnTask;
         }
 
         private void GetExtraPropertyInfo(FrameworkElement frameworkElement, out object extraPropertyValue, out TypeInfo extraPropertyType)
