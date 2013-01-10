@@ -18,8 +18,8 @@
     <tags>Windows8 XAML WinRT Controls Binding</tags>
   </metadata>
   <files>
-    <file src="bin\Release\Bob.dll" target="lib\winrt45\Bob.dll" />
-    <file src="bin\Release\Bob.pri" target="lib\winrt45\Bob.pri" />
-    <file src="bin\Release\Themes\Generic.xaml" target="lib\winrt45\Bob\Themes\Generic.xaml" />
+    <file src="bin\Release\Bob.dll" target="lib\windows8\Bob.dll" />
+    <file src="bin\Release\Bob.pri" target="lib\windows8\Bob.pri" />
+    <file src="bin\Release\Themes\Generic.xaml" target="lib\windows8\Bob\Themes\Generic.xaml" />
   </files>
 </package>
