@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>Bob</id>
-    <version>0.2.0</version>
+    <version>0.3.0</version>
     <title>Bob</title>
     <authors>Aaron Powell, Daniel Chambers</authors>
     <owners>Aaron Powell, Daniel Chambers</owners>
@@ -10,9 +10,12 @@
     <projectUrl>https://github.com/aaronpowell/Bob/</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Bob wasn't a great product for Microsoft but maybe Bob can add what's missing for Windows 8</description>
-    <releaseNotes>Initial release of Bob.</releaseNotes>
-    <copyright>Copyright 2012</copyright>
-    <tags>Windows8 XAML</tags>
+    <releaseNotes>- Removed the TaskExceptionExt class (and therefore the requirement to configure it)
+    - Added ConstrainedImage control
+    - Added DayMonthYearSelector control
+    </releaseNotes>
+    <copyright>Copyright 2013</copyright>
+    <tags>Windows8 XAML WinRT Controls Binding</tags>
   </metadata>
   <files>
     <file src="bin\Release\Bob.dll" target="lib\winrt45\Bob.dll" />
