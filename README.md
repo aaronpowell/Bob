@@ -17,6 +17,13 @@ Features:
 	* Event binding. You can either bind an event to an `ICommand` with the `EventToCommand` binding or an event to a methond on your DataContext via `EventToDataContextMethod`
 		* This is extensible, you can implement your own `EventBinding` if you want to bind to something else
 
+Download
+===
+
+Bob can be downloaded via NuGet. Enter the following command in your package manager console:
+
+    Install-Package Bob
+
 License
 ===
 
