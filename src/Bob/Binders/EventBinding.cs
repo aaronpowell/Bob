@@ -21,12 +21,14 @@ namespace Bob.Binders
 
             if (EventName == null)
                 return;
+                //throw new InvalidOperationException("The EventName is not set for an event binding");
 
             var elementType = element.GetType();
             EventInfo eventInfo = GetEventInfo(elementType, EventName);
             if (eventInfo == null)
             {
                 Debug.WriteLine(string.Format("Unable to bind event {0} on element of type {1} because that event cannot be found.", EventName, elementType.FullName));
+
                 return;
             }
 
